@@ -1,0 +1,27 @@
+# Security Investigation Report - IAM Privilege Escalation Simulation
+
+## Incident Summary
+A new IAM user was created and granted AdministratorAccess permissions, which is a high-risk action in AWS.
+
+## Events Observed
+- CreateUser
+- AttachUserPolicy
+
+## What I Investigated
+I used AWS CloudTrail to trace IAM activity and verify who created the user, when the action happened, and when elevated permissions were assigned.
+
+## Security Risk
+Attaching AdministratorAccess to a newly created user can lead to privilege escalation, misuse of resources, data exposure, and account compromise if not controlled.
+
+## Recommendations
+- Monitor privileged IAM changes
+- Follow least privilege access
+- Review admin policy assignments
+- Enable MFA for privileged accounts
+
+## Skills Demonstrated
+- AWS CloudTrail
+- IAM monitoring
+- Threat detection
+- Security investigation
+- Cloud security analysis
